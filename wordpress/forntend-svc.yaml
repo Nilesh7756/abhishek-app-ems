@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: frontend
+  name: frontend
+  namespace: cybpune-alm-dev
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 80
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    name: frontend
