@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node-emsapp
+  namespace: cybpune-alm-dev
+  labels:
+    name: node-emsapp
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name: node-emsapp
+    spec:
+      containers:
+      - image: nilesh7756/node-emp-app
+        name: node-emsapp
+        ports:
+        - containerPort: 5000
